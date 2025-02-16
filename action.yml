@@ -15,7 +15,7 @@ branding:
   icon: git-merge
   color: blue
 runs: 
-  using: 'docker'
-  image: 'docker://hypasist/godot4-gut-testing'
+  container:
+    image: hypasist/godot4-gut-testing:latest
   args:
     - ${{ inputs }}

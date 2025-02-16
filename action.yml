@@ -14,8 +14,3 @@ intputs:
 branding:
   icon: git-merge
   color: blue
-runs: 
-  container:
-    image: hypasist/godot4-gut-testing:latest
-  args:
-    - ${{ inputs }}

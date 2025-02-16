@@ -1,6 +1,7 @@
 # Container image that runs your code
 FROM ubuntu:22.04
 
+SHELL ["/bin/bash", "-c"]
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y && apt-get install -y wget unzip git git-lfs
 

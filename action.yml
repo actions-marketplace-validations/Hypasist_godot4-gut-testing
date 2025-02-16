@@ -1,4 +1,4 @@
-name: godot4-gut-testing-action
+name: godot4-gut-testing
 description: Download GUT, import resources, run GUT tests for Godot 4 inside of Docker.
 author: Hypasist
 intputs:
@@ -16,6 +16,6 @@ branding:
   color: blue
 runs: 
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://hypasist/godot4-gut-testing'
   args:
     - ${{ inputs }}

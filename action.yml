@@ -1,16 +1,21 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
-runs:
+name: godot4-gut-testing-action
+description: Download GUT, import resources, run GUT tests for Godot 4 inside of Docker.
+author: Hypasist
+intputs:
+  gutConfigPath:
+    description: "Path to GUT config relative to directory"
+    default: ''
+  extraGodotFlags:
+    description: "Extra flags passed to Godot."
+    default: '--headless'
+  importGodotResources:
+    descritpion: "Tells, whether we should make addition Godot pre-run with '--import' flag set. Useful, if .godot folder is not included in Godot project repository."
+    default: 'false'
+branding:
+  icon: git-merge
+  color: blue
+runs: 
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs }}

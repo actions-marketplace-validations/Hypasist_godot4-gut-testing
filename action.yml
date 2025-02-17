@@ -18,6 +18,8 @@ branding:
 runs:
   using: "composite"
   steps:
+    - run: echo "$gutConfigPath $extraGodotFlags $importGodotResources"
+  
     - name: List files in the repository
       run: pwd && ls && echo $GITHUB_WORKSPACE && echo ${{ github.workspace }} && echo $NODE_ENV
       shell: bash

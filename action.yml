@@ -18,6 +18,9 @@ branding:
 runs:
   using: "composite"
   steps:
+    - name: List files in the repository
+      run: pwd && ls && echo $GITHUB_WORKSPACE && echo ${{ github.workspace }} && echo $NODE_ENV
+      
     - name: Random Number Generator
       id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT

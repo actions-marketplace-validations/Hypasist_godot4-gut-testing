@@ -31,7 +31,7 @@ runs:
         
     - name: Moving GUT addons to the working folder
       shell: bash
-      run: echo "$DEBIAN_FRONTEND" && ls && ls _temp_gut && cp _temp_gut/addons/gut . && rm -rf  _temp_gut
+      run: echo "$DEBIAN_FRONTEND" && ls && ls _temp_gut && cp -R _temp_gut/addons/gut . && rm -rf  _temp_gut
               
     #- name: Importing Godot resources
     #  shell: bash

@@ -27,6 +27,8 @@ runs:
       with:
         repository: bitwes/Gut
         path: _gut
+      run: echo "ALOHA"
+      shell: bash
         
     - run: echo "$gutConfigPath $extraGodotFlags $importGodotResources"
       shell: bash

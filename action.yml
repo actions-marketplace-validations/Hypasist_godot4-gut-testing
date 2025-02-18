@@ -1,7 +1,7 @@
 name: godot4-gut-testing
 description: Download GUT, import resources, run GUT tests for Godot 4 inside of Docker.
 author: Hypasist
-intputs:
+inputs:
   gutConfigPath:
     description: "Path to GUT config relative to directory"
     default: ''

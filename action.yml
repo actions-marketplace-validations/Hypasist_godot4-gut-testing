@@ -31,14 +31,12 @@ runs:
         
     - name: Moving GUT addons to the working folder
       shell: bash
-      run: echo "$DEBIAN_FRONTEND" && ls && ls _temp_gut && cp -R _temp_gut/addons/gut . && rm -rf  _temp_gut
+      run: cp -R _temp_gut/addons . && ls addons && rm -rf  _temp_gut
               
     - name: Importing Godot resources
       shell: bash
       run: godot --headless --import --verbose --path .
       
-    - name: Set GitHub Path
-      run: echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+    - name: Importing Godot resources
       shell: bash
-      env:
-        GITHUB_ACTION_PATH: ${{ github.action_path }}
+      run: godot --headless --import --verbose --path . -s addons/gut/gut_cmdln.gd -gconfig ${{ inputs.gutConfigPath }}

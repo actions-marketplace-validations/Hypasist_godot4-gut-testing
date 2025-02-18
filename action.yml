@@ -18,6 +18,16 @@ branding:
 runs:
   using: "composite"
   steps:
+    - name: Fantalone repository checkout
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ github.repository }}
+    - name: GUT repository checkout
+      uses: actions/checkout@v4
+      with:
+        repository: bitwes/Gut
+        path: _gut
+        
     - run: echo "$gutConfigPath $extraGodotFlags $importGodotResources"
       shell: bash
   

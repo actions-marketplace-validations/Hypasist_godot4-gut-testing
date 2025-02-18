@@ -22,24 +22,20 @@ runs:
       uses: actions/checkout@v4
       with:
         repository: ${{ github.repository }}
+        
     - name: GUT repository checkout
       uses: actions/checkout@v4
       with:
         repository: bitwes/Gut
-        path: _gut
-      run: echo "ALOHA"
-      shell: bash
+        path: _temp_gut
         
-    - run: echo "$gutConfigPath $extraGodotFlags $importGodotResources"
+    - name: Moving GUT addons to the working folder
       shell: bash
-  
-    - name: List files in the repository
-      run: pwd && ls && echo $GITHUB_WORKSPACE && echo ${{ github.workspace }} && echo $NODE_ENV
-      shell: bash
-      
-    - name: Random Number Generator
-      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-      shell: bash
+      run: echo "$DEBIAN_FRONTEND" && ls && ls _temp_gut && cp _temp_gut/addons/gut . && rm -rf  _temp_gut
+              
+    #- name: Importing Godot resources
+    #  shell: bash
+     # run: 
       
     - name: Set GitHub Path
       run: echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH

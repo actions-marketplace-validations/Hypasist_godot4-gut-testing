@@ -7,7 +7,7 @@ inputs:
     default: ''
   extraGodotFlags:
     description: "Extra flags passed to Godot."
-    default: '--headless'
+    default: ''
   importGodotResources:
     descritpion: "Tells, whether we should make addition Godot pre-run with '--import' flag set. Useful, if .godot folder is not included in Godot project repository."
     default: 'false'
@@ -33,14 +33,10 @@ runs:
       shell: bash
       run: cp -R _temp_gut/addons . && ls addons && rm -rf  _temp_gut
       
-    - name: Check Godot version
-      shell: bash
-      run: godot --version
-              
     - name: Importing Godot resources
       shell: bash
-      run: godot --headless --import --path .
+      run: ${{ importGodotResources }} && godot ${{ extraGodotFlags }} --headless --import --path .
       
-    - name: Importing Godot resources
+    - name: Running Godot unit tests
       shell: bash
-      run: godot --headless --path . -s addons/gut/gut_cmdln.gd -gconfig ${{ inputs.gutConfigPath }}
+      run: godot ${{ extraGodotFlags }} --headless --path . -s addons/gut/gut_cmdln.gd -gconfig ${{ inputs.gutConfigPath }}

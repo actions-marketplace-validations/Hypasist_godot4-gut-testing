@@ -32,11 +32,15 @@ runs:
     - name: Moving GUT addons to the working folder
       shell: bash
       run: cp -R _temp_gut/addons . && ls addons && rm -rf  _temp_gut
+      
+    - name: Check Godot version
+      shell: bash
+      run: godot --version
               
     - name: Importing Godot resources
       shell: bash
-      run: godot --headless --import --verbose --path .
+      run: godot --headless --import --path .
       
     - name: Importing Godot resources
       shell: bash
-      run: godot --headless --import --verbose --path . -s addons/gut/gut_cmdln.gd -gconfig ${{ inputs.gutConfigPath }}
+      run: godot --headless --path . -s addons/gut/gut_cmdln.gd -gconfig ${{ inputs.gutConfigPath }}

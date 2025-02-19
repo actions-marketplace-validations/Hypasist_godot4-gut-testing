@@ -35,8 +35,8 @@ runs:
       
     - name: Importing Godot resources
       shell: bash
-      run: ${{ importGodotResources }} && godot ${{ extraGodotFlags }} --headless --import --path .
+      run: ${{ inputs.importGodotResources }} && godot ${{ inputs.extraGodotFlags }} --headless --import --path .
       
     - name: Running Godot unit tests
       shell: bash
-      run: godot ${{ extraGodotFlags }} --headless --path . -s addons/gut/gut_cmdln.gd -gconfig ${{ inputs.gutConfigPath }}
+      run: godot ${{ inputs.extraGodotFlags }} --headless --path . -s addons/gut/gut_cmdln.gd -gconfig ${{ inputs.gutConfigPath }}

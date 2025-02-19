@@ -15,14 +15,14 @@ It does the following:
 - uses: Hypasist/godot4-gut-testing@v1.0
   with:
     # Path to GUT configuration. Example config is pasted below.
-    # Default: ''
+    # Default: '.'
     gutConfigPath:
 
     # Extra flags to pass to both Godot runs. E.g. `--verbose`
-    # Default: ''
+    # Default: ' '
     extraGodotFlags:
 
-    # Boolean value, you can disable resource importing, if you include `.godot` folder in your repository.
+    # Boolean value; you can disable resource importing, if you include `.godot` folder in your repository.
     # Default: 'true'
     importGodotResources:
 ```

@@ -4,11 +4,13 @@ author: Hypasist
 inputs:
   gutConfigPath:
     description: "Path to GUT config relative to directory"
+    default: '.'
   extraGodotFlags:
     description: "Extra flags passed to Godot."
+    default: ' '
   importGodotResources:
     descritpion: "Tells, whether we should make addition Godot pre-run with '--import' flag set. Useful, if .godot folder is not included in Godot project repository."
-    default: 'false'
+    default: 'true'
 branding:
   icon: git-merge
   color: blue

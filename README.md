@@ -1,5 +1,3 @@
-[![Build and Test](https://github.com/Hypasists/godot4-gut-testing/workflows/test.yml/badge.svg)](https://github.com/Hypasist/godot4-gut-testingw/actions/workflows/test.yml)
-
 # godot4-gut-testing
 
 Not-so-complex GitHub Action to run your [Godot Unit Tests](https://github.com/bitwes/Gut).
